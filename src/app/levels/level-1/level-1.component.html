@@ -1,0 +1,40 @@
+<section class="w-[100vw] min-h-[100vh] bg-[url('/assets/image/stich/stich.jpg')] bg-cover bg-center">
+    <div class="w-full min-h-[100vh] h-full bg-slate-50 bg-opacity-5 backdrop-blur-[45px] flex flex-col items-center py-4 gap-4">
+        <header class="w-[95%] h-fit bg-slate-700 text-slate-100 flex justify-around shadow-2xl py-4 px-2 rounded-xl border-2 border-[#17FFC6]">
+            <p class="text-lg flex flex-col items-center"><span class="font-bold">Puntaje</span>1500</p>
+            <p class="text-lg flex flex-col items-center"><span class="font-bold">Tiempo</span>15:40</p>
+            <p class="text-lg flex flex-col items-center"><span class="font-bold">Nivel</span>1</p>
+        </header>
+
+        <div class="flex-1 w-[95%] rounded-xl py-4 flex flex-col items-center" cdkDropListGroup>
+            <p class="bg-slate-700 px-4 py-2 rounded-xl border-2 border-[#17FFC6] text-2xl text-slate-100 text-center mb-4 font-bold">Stich</p>
+            <div class="w-full h-fit flex relative mb-10">
+                <img src="/assets/image/stich/stich.jpg" alt="" class="w-full opacity-5" #image>
+                <div class="absolute top-0 bottom-0 left-0 right-0 flex gap-[1px] flex-wrap">
+                    @for (box of imageIndex; track $index) {
+                        <div class="bg-slate-900 w-[33.1%] h-1/3" #boxImage cdkDrag></div>
+                    }
+                </div>
+                <div class="absolute top-0 bottom-0 left-0 right-0 flex flex-wrap gap-[1px] overflow-hidden">
+                    <div class="w-[33.1%] h-1/3" cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3" cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3" cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3" cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3 " cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3 " cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3 " cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3 " cdkDropList></div>
+                    <div class="w-[33.1%] h-1/3 " cdkDropList></div>
+                </div>
+            </div>
+
+            <div class="w-full flex flex-wrap" [style.height]="image.height+'px'" cdkDropList>
+                @for (box of imageIndex; track $index) {
+                    <div class="w-[33.1%]">
+                        <img [src]="'/assets/image/stich/Pieza'+box+'.png'" alt="" class="w-full" cdkDrag>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
